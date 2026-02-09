@@ -1,0 +1,89 @@
+
+
+
+{
+
+  "artworks": [
+    {
+      "title": "Grey Mountain",
+      "year": 2025,
+      "medium": "Color pencil, pencil, white gouache, tippex, silver/gold stickers, sale-stickers, glue and found images on paper",
+      "dimensions": ["23 1/2 x 33 in.", "60 x 84 cm"],
+      "code": "WAC29750",
+      "price": "R1200.00",
+      "image_url": "/Images/So many People in the night/GREY MOUNTAIN.jpg"
+    },
+    {
+      "title": "Multi Mountain",
+      "year": 2025,
+      "medium": "Color pencil, pencil, white gouache, tippex, silver/gold stickers, sale-stickers, glue and found images on paper",
+      "dimensions": ["23 1/2 x 33 in.", "60 x 84 cm"],
+      "code": "WAC29751",
+      "price": "R1200.00",
+      "image_url": "/Images/So many People in the night/MULTI MOUNTAIN.jpg"
+    },
+    {
+      "title": "Red Rock",
+      "year": 2025,
+      "medium": "Color pencil, pencil, white gouache, tippex, silver/gold stickers, sale-stickers, glue and found images on paper",
+      "dimensions": ["23 1/2 x 33 in.", "60 x 84 cm"],
+      "code": "WAC29749",
+      "price": "R1200.00",
+      "image_url": "/Images/So many People in the night/RED ROCK.jpg"
+    },
+    {
+      "title": "Ascension Drawing",
+      "year": 2025,
+      "medium": "White gouache, color pencil and pencil on cardboard",
+      "dimensions": ["4 7/8 x 9 1/4 in.", "12.5 × 23.5 cm"],
+      "code": "WAC29753",
+      "price": "R400.00",
+      "image_url": "/Images/So many People in the night/ASCENSION DRAWING.jpg"
+    },
+    {
+      "title": "Drawing of Shrine",
+      "year": 2025,
+      "medium": "White gouache, color pencil and pencil on cardboard",
+      "dimensions": ["5 1/2 x 9 in.", "14 x 23 cm"],
+      "code": "WAC29752",
+      "price": "R400.00",
+      "image_url": "/Images/So many People in the night/DRAWING FOR SHRINE.jpg"
+    },
+    {
+      "title": "Blue Text 1-5",
+      "year": 2025,
+      "medium": "Color pencil, tippex, white gouache, silver stickers, silver plastic tape and silver stickers on paper (various GSM)",
+      "dimensions": ["11 5/8 x 16 1/2 in.", "29.7 x 42 cm"],
+      "code": "WAC29636",
+      "price": "R890 each",
+      "image_url": "/Images/So many People in the night/BT1.jpg"
+    },
+    {
+      "title": "Mountain Poster 1-6",
+      "year": 2025,
+      "medium": "Color pencil, pencil, tippex, white gouache, gold/silver stickers and sale stickers on paper (various GSM)",
+      "dimensions": ["11 5/8 x 16 1/2 in.", "29.7 x 42 cm"],
+      "code": "WAC29651",
+      "price": "R890 each",
+      "image_url": "/Images/So many People in the night/M7.jpg"
+    },
+    {
+      "title": "Red Text 1-5",
+      "year": 2025,
+      "medium": "Color pencil, pencil, tippex, white gouache, gold stickers and sale stickers on paper (various GSM)",
+      "dimensions": ["11 5/8 x 16 1/2 in.", "29.7 x 42 cm"],
+      "code": "WAC29641",
+      "price": "R890 each",
+      "image_url": "/Images/So many People in the night/RT1.jpg"
+    },
+    {
+      "title": "Yellow Text 1-5",
+      "year": 2025,
+      "medium": "Color pencil, tippex, white gouache, gold stickers, sale stickers and magazine cut-outs on paper (various GSM)",
+      "dimensions": ["11 5/8 x 16 1/2 in.", "29.7 x 42 cm"],
+      "code": "WAC29641",
+      "price": "R890 each",
+      "image_url": "/Images/So many People in the night/YT5.jpg"
+    }
+  ]
+}

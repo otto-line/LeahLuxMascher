@@ -1,0 +1,11 @@
+{
+  "name": "leah-artwork-website",
+  "version": "1.0.0",
+  "description": "Artist website with automated artwork HTML generation",
+  "scripts": {
+    "watch": "node watch-and-generate.js",
+    "generate": "node generate-artwork-html.js"
+  },
+  "author": "Leah Lux Mascher",
+  "license": "ISC"
+}

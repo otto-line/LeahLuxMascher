@@ -1,0 +1,74 @@
+{
+  "cv": [
+    {
+      "title": "PIPE DREAMS",
+      "year": 2024,
+      "description": "Group show showcasing a selection of photographs",
+      "dates": "21 March - 4 April 2024",
+      "location": "Demo Projects, 79 Roeland Street, Cape Town"
+    },
+    {
+      "title": "NECKLACE",
+      "year": 2024,
+      "description": "Solo interactive performance piece and installation",
+      "dates": "6 June 2024",
+      "location": "Demo Projects, 79 Roeland Street, Cape Town"
+    },
+    {
+      "title": "FOREVER LOVE",
+      "year": 2024,
+      "description": "Multi-media art installation, graduate body of work for the Michaelis School of Fine Art BA (Hons) degree in Fine Art",
+      "dates": "6 December 2024",
+      "location": "31-37 Orange Street, Cape Town"
+    },
+    {
+      "title": "GIRLS TOO",
+      "year": 2025,
+      "description": "Group show showcasing a selection of photographs and light fixtures",
+      "dates": "13 - 27 February 2025",
+      "location": "Lemkus Gallery, 28 St George's Mall, Cape Town"
+    },
+    {
+      "title": "FORGET ME NOT",
+      "year": 2025,
+      "description": "Group show showcasing a woodcut",
+      "dates": "22 - 29 March 2025",
+      "location": "Kalashnikov Gallery, 61 Loop St, Cape Town"
+    },
+    {
+      "title": "FAMILIA",
+      "year": 2025,
+      "description": "Group show showcasing a collage",
+      "dates": "June 2025",
+      "location": "Brutal, 48 Albert Road, Woodstock, Cape Town"
+    },
+    {
+      "title": "GROUPSHOW FROM HELL",
+      "year": 2025,
+      "description": "Group show showcasing a videowork titled \"Fiery Sadness\" (2023)",
+      "dates": "23 - 26 October 2025",
+      "location": "14 Tuin Plein Street, Gardens, Cape Town"
+    },
+    {
+      "title": "YOU'RE SO VAIN YOU PROBABLY THINK THIS GROUP SHOW IS ABOUT YOU",
+      "year": 2025,
+      "description": "Group show showcasing an installation and poster design \"LUX ROOM SHRINE\" (2025)",
+      "dates": "20 December 2025 - 31 January 2026",
+      "location": "14 Tuin Plein Street, Gardens, Cape Town"
+    },
+    {
+      "title": "SO MANY PEOPLE IN THE NIGHT",
+      "year": 2026,
+      "description": "Solo show / installation / drawings at Cubicle Everard Read alongside Kutti Collective, Mbulelo Lokoto, Kamva Matuis, Turning into Flowers and Aaron Philander",
+      "dates": "12 - 24 January 2026",
+      "location": "CIRCA, Everard Read, Cape Town"
+    },
+    {
+      "title": "EAVESDROP",
+      "year": 2026,
+      "description": "Performance piece with Kahlil Visser, in collaboration with Everard Read",
+      "dates": "20 - 22 February 2026",
+      "location": "Investec Cape Town Art Fair, CTICC"
+    }
+  ]
+}

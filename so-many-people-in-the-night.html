@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>So Many People in the Night</title>
+    <link rel="stylesheet" href="/projects-style.css">
+    <style>
+        .work-box { display: grid; grid-template-columns: 0.2fr 0.2fr 0.5fr; gap: 10px; }
+        .work-text-box { margin-left: 10px; }
+
+        /* Image cursor */
+        .work-box img {
+            cursor: pointer;
+        }
+
+        /* Fullscreen modal */
+        .fullscreen-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.95);
+            z-index: 9999;
+            cursor: pointer;
+        }
+
+        .fullscreen-modal.active {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .fullscreen-modal img {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+            cursor: default;
+        }
+
+        .fullscreen-modal .close-btn {
+            position: absolute;
+            top: 0px;
+            right: 30px;
+            font-size: 40px;
+            color: white;
+            cursor: pointer;
+            z-index: 10000;
+        }
+
+        @media (max-width: 768px) {
+            .work-box {
+                grid-template-columns: auto 1fr;
+                grid-template-rows: auto auto;
+            }
+            .work-box img {
+                width: 100%;
+                max-width: 100%;
+                height: auto;
+            }
+            .work-text-box {
+                grid-column: 1 / -1;
+                margin-left: 0;
+                font-size: 0.85em;
+            }
+            p {
+                font-size: clamp(12px, 2.5vw, 16px);
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div>
+        <div class="project-container">
+        <h1 class="project-title">So Many People In The Night</h1>
+        <div class="project-description"> 
+            <p style="text-transform: uppercase; font-style: italic;">2026, solo show / installation/ drawings at Cubicle
+Everard Read alongside Kutti Collective, Mbulelo Lokoto, Kamva Matuis, Turning into Flowers
+and Aaron Philander. 12-24 January 2025, held at CIRCA , Everard Read, Cape Town.</p>
+            <p>So many people in the night is a line from the song Slums (1988) by Senyaka. It is an upbeat kwaito-style
+song about loneliness and the possibility of connection: “many more want to sing with me” . Senyaka sings
+about how his environment renders him a diffuse subject. He is a man, he is no one, his shoes and luggage
+are gone. To me, the song is about desire for transcendence and a hope for connection, despite the
+hardship of inescapable realities.</p>
+            <p>I am interested in the merchandising of pop culture – religion in particular – in posters, small books, and
+shiny statues. The installation for this body of work consists of a large wooden structure that takes the
+viewer on a short, vertical pilgrimage. Alongside the walkable sculpture are drawings and a wall of
+keepsakes or tokens, all hand-drawn, all containing pieces of text from magazines, and all featuring a
+mountain as a symbol. “If there is no mountain, there is no God” is a thought I had whilst in Amsterdam – a
+city erected on wooden piles, flat, with only clouds surrounding it. Besides being physical markers, like in
+Cape Town, mountains are symbols of deep time. In many cultures, going up a mountain is a spiritual
+practice. In human time, they are markers of the eternal; in geological time, they are ever-shifting.</p>
+
+        </div>
+        
+        <div id="artworks-container">
+            <!-- Artworks will be dynamically loaded here -->
+        </div>
+
+    </div>
+
+    <!-- Fullscreen modal -->
+    <div class="fullscreen-modal" id="fullscreen-modal">
+        <span class="close-btn">&times;</span>
+        <img id="fullscreen-img" src="" alt="">
+    </div>
+
+   <script>
+  fetch('./projects.json')
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`HTTP ${response.status}`);
+      }
+      return response.json();
+    })
+    .then(data => {
+      console.log('DATA:', data);
+
+      // Get the container where we'll insert the artworks
+      const container = document.getElementById('artworks-container');
+
+      // Generate HTML for each artwork
+      data.artworks.forEach((artwork, index) => {
+        // Format dimensions: combine array into "inches (cm)" format
+        const dimensions = artwork.dimensions
+          ? `${artwork.dimensions[0]} (${artwork.dimensions[1]})`
+          : '';
+
+        // Format title with year
+        const titleWithYear = `${artwork.title.toUpperCase()}, ${artwork.year}`;
+
+        // Format medium in uppercase
+        const medium = artwork.medium ? artwork.medium.toUpperCase() : '';
+
+        // Format price (empty if null)
+        const price = artwork.price || '';
+
+        // Create the work-box div
+        const workBox = document.createElement('div');
+        workBox.className = 'work-box';
+        workBox.id = artwork.code || '';
+
+        workBox.innerHTML = `
+          <div> ${index + 1} </div>
+          <div> <img loading="lazy" width="200" src="${artwork.image_url || ''}" alt="${artwork.title}"> </div>
+          <div class="work-text-box">
+            <p class="title" style="font-weight: 400;">${titleWithYear} </p>
+            <p class="medium">${medium}</p>
+            <p class="dimensions"> ${dimensions}</p>
+            <div><p class="price">${price}</p></div>
+          </div>
+        `;
+
+        // Add to container
+        container.appendChild(workBox);
+      });
+
+      console.log(`Loaded ${data.artworks.length} artworks`);
+
+      // Add fullscreen functionality to all images
+      setupFullscreenImages();
+    })
+    .catch(err => {
+      console.error('FETCH FAILED:', err);
+    });
+
+  // Fullscreen image functionality
+  function setupFullscreenImages() {
+    const modal = document.getElementById('fullscreen-modal');
+    const fullscreenImg = document.getElementById('fullscreen-img');
+    const closeBtn = document.querySelector('.close-btn');
+
+    // Add click listeners to all artwork images
+    const images = document.querySelectorAll('.work-box img');
+    images.forEach(img => {
+      img.addEventListener('click', () => {
+        fullscreenImg.src = img.src;
+        fullscreenImg.alt = img.alt;
+        modal.classList.add('active');
+      });
+    });
+
+    // Close modal when clicking the close button
+    closeBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      modal.classList.remove('active');
+    });
+
+    // Close modal when clicking the overlay (but not the image)
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        modal.classList.remove('active');
+      }
+    });
+
+    // Close modal with ESC key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.classList.contains('active')) {
+        modal.classList.remove('active');
+      }
+    });
+  }
+</script>
+
+<script>
+    const heading = document.querySelector('h1');
+    if (heading) {
+        heading.style.cursor = 'pointer';
+        heading.addEventListener('mouseenter', () => {
+            window.parent.postMessage({ hoverImage: '/Images/hover/So-many-people-in-the-night.jpg' }, '*');
+        });
+        heading.addEventListener('mouseleave', () => {
+            window.parent.postMessage({ hoverImage: null }, '*');
+        });
+    }
+</script>
+</body>
+</html>
