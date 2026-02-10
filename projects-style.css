@@ -17,7 +17,7 @@ body {
 }
 
 .project-container {
-    padding: 20px;
+    padding: 5px;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -35,7 +35,7 @@ body {
     font-size: 1.0em;
     font-weight: 300;
     line-height: 1.1;
-    max-width: 80vw;
+    max-width: 90vw;
     font-family: "Neue Haas Grotesk", Arial, sans-serif;
     text-align: left;
     text-wrap: pretty;
@@ -57,10 +57,11 @@ h2, h3, h4, h1 {
 
 .image-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: 1fr;
     gap: 10px;
     margin-top: 3em;
     padding-bottom: 1em;
+    
 }
 
 .image-grid > div {
