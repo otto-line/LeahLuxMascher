@@ -41,9 +41,9 @@ min-height: 100vh;
 .render {
 background-color: rgb(255, 255, 255);
 border: rgb(252, 15, 50) 2px solid;
-width: 50%;
+width: 70%;
 margin-left: auto;
-margin-right: auto;
+margin-right: 0px;
 
 }
 
@@ -53,6 +53,11 @@ text-shadow: 0 0 5px #eb80ff;
 transition: 3ms ease-in-out;
 }
 
+.menu-items:hover a {
+background-color: white;
+color: #cf0000;
+transition: 3ms ease-in-out;
+}
 
 
 .title {
@@ -96,10 +101,10 @@ flex-direction: column;
     text-align: left;
 }
 
-.menu-items:hover a {
+/* .menu-items:hover a {
     color: #eb80ff;
     text-shadow: 0 0 5px #eb80ff;
-}
+} */
 
 .menu-heading {
     text-align: left;
