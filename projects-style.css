@@ -75,8 +75,15 @@ h2, h3, h4, h1 {
 
 #forever-love-grid {
     display: flex;
-    justify-content: flex-end;
-    margin-top: 2em;
     flex-direction: column;
+    justify-content: flex-end;
+    flex-grow: 1;
+    width: 80vw;
+
+}
+
+#forever-love-grid img {
+    background-color: red;
+    max-width: 50%;
 
 }
