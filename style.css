@@ -15,6 +15,11 @@ font-weight: 300;
 -webkit-font-smoothing: subpixel-antialiased;
 -moz-osx-font-smoothing: auto;
 text-rendering: optimizeLegibility;
+scrollbar-width: none;
+}
+
+*::-webkit-scrollbar {
+display: none;
 }
 
 p {
@@ -110,7 +115,7 @@ flex-direction: column;
 .menu-heading {
     text-align: left;
     color: white;
-    border-bottom: 1px solid grey;
+    border-bottom: none;
     margin: auto 0 auto 0;
     width: 100%;
 }
@@ -121,7 +126,7 @@ flex-direction: column;
 }
 .menu-items a {
     color: white;
-    text-decoration: underline;
+    /* text-decoration: underline; */
     text-decoration-thickness: 0.5px;
     font-weight: 100;
     transition: color 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
@@ -134,6 +139,7 @@ flex-direction: column;
     font-size: 1em;
     font-family: sans-serif;
     margin-top: auto;
+    display: none;
 }
 
 .contact-box summary {
@@ -304,9 +310,9 @@ cv-container {
     }
 
     .title {
-font-size: 120px;
+font-size: clamp(5vw, 10vw, 120px);
 line-height: 0.6;
-text-align: left;
+text-align: center;
 }
 
 .menu-container {
@@ -327,7 +333,7 @@ padding: 30px;
 display: grid;
 align-items: center;
 position: absolute;
-left: 30%;
+left: 50%;
 transform: translateX(-50%);
 z-index: 1;
 filter: blur(30px);
@@ -337,7 +343,7 @@ place-items: center;
 .menu-heading {
 text-align: left;
 color: white;
-border-bottom: 1px solid grey;
+border-bottom: none;
 margin: auto 0 auto 0;
 width: 100%;
 font-size: clamp(1rem, 3vw, 2em);
@@ -351,8 +357,39 @@ font-weight: 100;
 
 }
 
+.menu-item-thumb {
+    display: none;
+}
+
+#menu-toggle {
+    display: none;
+}
+
 /* phone */
 @media (max-width: 480px) {
+
+#menu-toggle {
+    display: block;
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 500;
+    background: rgb(220, 2, 2);
+    color: white;
+    border: none;
+    font-size: 1.4em;
+    padding: 5px 10px;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.menu-container.menu-hidden {
+    display: none;
+}
+
+.container.menu-closed {
+    grid-template-columns: 1fr;
+}
 
 .menu-heading {
 font-size: clamp(1rem, 3vw, 2em);
@@ -362,6 +399,21 @@ font-weight: 100;
 .menu-items {
     font-size: clamp(1rem, 3vw, 2em);
     overflow-wrap: break-word;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.menu-item-thumb {
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.contact-box {
+    display: none;
 }
 
 }

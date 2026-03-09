@@ -1,0 +1,41 @@
+{
+  "projects": [
+    {
+      "title": "Studio",
+      "href": "studio.html",
+      "year": null,
+      "hoverImage": null,
+      "spacerAfter": true
+    },
+    {
+      "title": "So Many People In The Night",
+      "href": "so-many-people-in-the-night.html",
+      "year": "'26",
+      "hoverImage": "Images/hover/So-many-people-in-the-night.jpg"
+    },
+    {
+      "title": "Lux Room Shrine",
+      "href": "shrine-hotspot.html",
+      "year": "'25",
+      "hoverImage": "Images/hover/LUX BEDROOM SHRINE A3 PRINT.png"
+    },
+    {
+      "title": "Forever Love",
+      "href": "Forever-Love.html",
+      "year": "'24",
+      "hoverImage": "Images/hover/Forever-love.png"
+    },
+    {
+      "title": "Necklace",
+      "href": "necklace.html",
+      "year": "'24",
+      "hoverImage": "Images/hover/Necklace.png"
+    },
+    {
+      "title": "Pipe Dreams",
+      "href": "Pipe-Dreams.html",
+      "year": "'24",
+      "hoverImage": null
+    }
+  ]
+}

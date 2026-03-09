@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studio</title>
+    <link rel="stylesheet" href="projects-style.css">
+    <style>
+        .project-title { font-weight: normal; text-transform: uppercase; }
+        p { font-size: clamp(14px, 1.6vw, 20px); }
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-top: 3em;
+        }
+        @media (max-width: 480px) {
+            .image-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+    </style>
+</head>
+<body>
+    <div class="project-container">
+        <h1 class="project-title">Studio</h1>
+        <div class="project-description">
+            <p style="text-transform: uppercase; font-style: italic;">Studio practice.</p>
+            <p>A collection of works from the studio.</p>
+        </div>
+
+        <div class="image-grid">
+            <div><img src="Images/Studio/ABSTRACT FIRE.jpg" alt="Abstract Fire"></div>
+            <div><img src="Images/Studio/BLUE FIRE.jpg" alt="Blue Fire"></div>
+            <div><img src="Images/Studio/LOVE GOLD.jpg" alt="Love Gold"></div>
+            <div><img src="Images/Studio/LUCKY MOUNTAIN.jpg" alt="Lucky Mountain"></div>
+            <div><img src="Images/Studio/NIGHTSTAND.jpg" alt="Nightstand"></div>
+            <div><img src="Images/Studio/New Icons 2.jpg" alt="New Icons 2"></div>
+            <div><img src="Images/Studio/New icons 1.jpg" alt="New Icons 1"></div>
+            <div><img src="Images/Studio/YELLOW ROCK FIRST ITERATION.jpg" alt="Yellow Rock First Iteration"></div>
+        </div>
+    </div>
+</body>
+</html>

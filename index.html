@@ -39,6 +39,7 @@
         object-fit: contain;
     ">
 </div>
+<button id="menu-toggle" aria-label="Toggle menu">&#9776;</button>
  <div class="render"><div class="container">
         <div id="content">
         <iframe name="content" src="about.html">opening</iframe>
@@ -55,15 +56,13 @@
     </div>
     <!--Projects start here--> 
     <div class="menu">
-        <h1 class="menu-heading"> <a href="about.html" target="content"> About </a> </h1>
+        <h1 class="menu-heading"> <a href="about.html" target="content"> Bio </a> </h1>
         <h1 class="menu-heading"> <a href="cv.html" target="content"> CV </a> </h1>
+        <!-- <h1 class="menu-heading"> <a href="contact.html" target="content"> </a> </h1> -->
         <div class="menu-heading"> <h1>Projects</h1></div>
+    
         
-    <div class="menu-items"><a href="Pipe-Dreams.html" target="content">Pipe Dreams</a></div>
-    <div class="menu-items"><a href="necklace.html" target="content" data-hover-image="Images/hover/Necklace.png">Necklace</a></div>
-    <div class="menu-items"><a href="Forever-Love.html" target="content" data-hover-image="Images/hover/Forever-love.png">Forever Love</a></div>
-    <div class="menu-items"><a href="shrine-hotspot.html" target="content" data-hover-image="Images/hover/LUX BEDROOM SHRINE A3 PRINT.png">Lux Room Shrine</a></div>
-    <div class="menu-items"><a href="so-many-people-in-the-night.html" target="content" data-hover-image="Images/hover/So-many-people-in-the-night.jpg">So Many People In The Night</a></div>              
+    <div id="project-menu-items"></div>
     </div>
 
     <div class="contact-box">
@@ -83,17 +82,58 @@
 <script>
     const previewDiv = document.getElementById('hover-preview');
     const previewImg = document.getElementById('hover-preview-img');
-    const menuLinks = document.querySelectorAll('.menu-items a[data-hover-image]');
+    const menuContainer = document.querySelector('.menu-container');
+    const menuToggle = document.getElementById('menu-toggle');
+    const gridContainer = document.querySelector('.container');
 
-    menuLinks.forEach(link => {
-        link.addEventListener('mouseenter', () => {
-            previewImg.src = link.dataset.hoverImage;
-            previewDiv.style.display = 'block';
-        });
-        link.addEventListener('mouseleave', () => {
-            previewDiv.style.display = 'none';
-        });
+    function hideMenuOnMobile() {
+        if (window.innerWidth <= 480) {
+            menuContainer.classList.add('menu-hidden');
+            gridContainer.classList.add('menu-closed');
+        }
+    }
+
+    menuToggle.addEventListener('click', () => {
+        menuContainer.classList.toggle('menu-hidden');
+        gridContainer.classList.toggle('menu-closed');
     });
+
+    // Hide menu when static heading links (Bio, CV) are clicked
+    document.querySelectorAll('.menu-heading a[target="content"]').forEach(link => {
+        link.addEventListener('click', hideMenuOnMobile);
+    });
+
+    function attachHoverListeners() {
+        document.querySelectorAll('.menu-items a[data-hover-image]').forEach(link => {
+            link.addEventListener('mouseenter', () => {
+                previewImg.src = link.dataset.hoverImage;
+                previewDiv.style.display = 'block';
+            });
+            link.addEventListener('mouseleave', () => {
+                previewDiv.style.display = 'none';
+            });
+        });
+    }
+
+    fetch('menu.json')
+        .then(r => r.json())
+        .then(data => {
+            const container = document.getElementById('project-menu-items');
+            data.projects.forEach(p => {
+                const div = document.createElement('div');
+                div.className = 'menu-items';
+                if (p.spacerAfter) div.style.marginBottom = '1em';
+                const a = document.createElement('a');
+                a.href = p.href;
+                a.target = 'content';
+                if (p.hoverImage) a.dataset.hoverImage = p.hoverImage;
+                a.textContent = p.year ? `${p.title} ${p.year}` : p.title;
+                a.addEventListener('click', hideMenuOnMobile);
+                div.appendChild(a);
+                container.appendChild(div);
+            });
+            attachHoverListeners();
+        });
 
     const hotspotTextDiv = document.getElementById('hotspot-text');
 

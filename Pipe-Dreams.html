@@ -7,12 +7,26 @@
     <link rel="stylesheet" href="projects-style.css">
     <style>
         h2, h3, h4, h1 { text-transform: uppercase; }
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-top: 2em;
+            margin-bottom: 2em;
+        }
+        .photo-grid img { width: 100%; object-fit: cover; }
+        .photo-grid .landscape { grid-column: span 3; }
+        .photo-grid .portrait { grid-column: span 1; }
+        @media (max-width: 480px) {
+            .photo-grid { grid-template-columns: repeat(2, 1fr); }
+            .photo-grid .landscape { grid-column: span 2; }
+        }
     </style>
 </head>
 <body>
     <div class="project-container">
         <h1 class="project-title">Pipe Dreams</h1>
-        <div class="project-description"> 
+        <div class="project-description">
             <p style="text-transform: uppercase; font-style: italic;"> 2024, group show showcasing a selection of photographs, 21st March – 4 April 2024,
 held at Demo Projects, 79 Roeland Street, Cape Town.</p>
             <p>Queerness is given form by practice, rather than by design. It does not possess a blueprint or design in the
@@ -25,7 +39,15 @@ and utilized to imagine some sense of a personal identity and belonging into tan
 not, how does queerness – in its all its ambivalence, devotionality and innovativeness – work to undermine
 the imperiousness of the built world?</p>
             <p>Participants: Bjorn Thomas, Matthew Michael, Unathi Mkonto.</p>
-
         </div>
+
+        <div class="photo-grid">
+            <div class="portrait"><img src="Images/PIPE DREAMS/MARY 1.jpg" alt="Mary 1"></div>
+            <div class="portrait"><img src="Images/PIPE DREAMS/MARY 2.jpg" alt="Mary 2"></div>
+            <div class="portrait"><img src="Images/PIPE DREAMS/PINCH.jpg" alt="Pinch"></div>
+            <div class="portrait"><img src="Images/PIPE DREAMS/PISS.jpg" alt="Piss"></div>
+            <div class="landscape"><img src="Images/PIPE DREAMS/SWEAT MAP.jpg" alt="Sweat Map"></div>
+        </div>
+    </div>
 </body>
 </html>
