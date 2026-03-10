@@ -47,8 +47,8 @@ min-height: 100vh;
 background-color: rgb(255, 255, 255);
 border: rgb(252, 15, 50) 2px solid;
 width: 70%;
-margin-left: auto;
-margin-right: 0px;
+margin-left: 0px;
+margin-right: auto;
 
 }
 
@@ -277,6 +277,7 @@ cv-container {
 .about-image img {
     max-width: 600px;
     width: 100%;
+    
 }
 
 
