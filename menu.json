@@ -14,6 +14,12 @@
       "hoverImage": "Images/hover/So-many-people-in-the-night.jpg"
     },
     {
+      "title": "Eavesdrop",
+      "href": "eavesdrop.html",
+      "year": "'26",
+      "hoverImage": "Images/hover/Eavesdrop.png"
+    },
+    {
       "title": "Lux Room Shrine",
       "href": "shrine-hotspot.html",
       "year": "'25",
