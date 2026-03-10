@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fiery Sadness</title>
+    <link rel="stylesheet" href="projects-style.css">
+    <style>
+        .project-title { font-weight: normal; text-transform: uppercase; }
+        p { font-size: clamp(14px, 1.6vw, 20px); }
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-top: 2em;
+            margin-bottom: 2em;
+        }
+        .photo-grid img { width: 100%; object-fit: cover; }
+        .photo-grid .landscape { grid-column: span 2; }
+        .photo-grid .portrait { grid-column: span 1; }
+        @media (max-width: 480px) {
+            .photo-grid { grid-template-columns: repeat(2, 1fr); }
+            .photo-grid .landscape { grid-column: span 1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="project-container">
+        <h1 class="project-title">Fiery Sadness</h1>
+        <div class="project-description">
+            <p style="text-transform: uppercase; font-style: italic;">Work in progress</p>
+            <p>A collection of works exploring themes of intensity and melancholy.</p>
+        </div>
+
+        <div class="photo-grid">
+            <div class="portrait"><img src="Images/FIERY-SADNESS/FS1.jpg" alt="FS1"></div>
+            <div class="portrait"><img src="Images/FIERY-SADNESS/FS2.jpg" alt="FS2"></div>
+            <div class="portrait"><img src="Images/FIERY-SADNESS/FS3.jpg" alt="FS3"></div>
+            <div class="portrait"><img src="Images/FIERY-SADNESS/FS4.jpg" alt="FS4"></div>
+            <div class="portrait"><img src="Images/FIERY-SADNESS/FS5.jpg" alt="FS5"></div>
+            <div class="portrait"><img src="Images/FIERY-SADNESS/FS6.jpg" alt="FS6"></div>
+            <div class="portrait"><img src="Images/FIERY-SADNESS/FS8.jpg" alt="FS8"></div>
+            <div class="portrait"><img src="Images/FIERY-SADNESS/FS10.jpg" alt="FS10"></div>
+            <div class="portrait"><img src="Images/FIERY-SADNESS/FS11.jpg" alt="FS11"></div>
+        </div>
+    </div>
+<script>
+    const title = document.querySelector('.project-title');
+    if (title && window.innerWidth > 768) {
+        title.style.cursor = 'pointer';
+        title.addEventListener('mouseenter', () => {
+            window.parent.postMessage({ hoverImage: '/Images/hover/Fiery-Sadness.png' }, '*');
+        });
+        title.addEventListener('mouseleave', () => {
+            window.parent.postMessage({ hoverImage: null }, '*');
+        });
+    }
+</script>
+</body>
+</html>
