@@ -91,7 +91,7 @@
     </div>
 <script>
     const title = document.querySelector('.project-title');
-    if (title) {
+    if (title && window.innerWidth > 768) {
         title.style.cursor = 'pointer';
         title.addEventListener('mouseenter', () => {
             window.parent.postMessage({ hoverImage: '/Images/hover/Eavesdrop.png' }, '*');

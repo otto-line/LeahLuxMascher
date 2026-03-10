@@ -269,7 +269,7 @@ cv-container {
 
 .about-image {
     display: flex;
-    justify-content: end;
+    justify-content: flex-start;
     padding-top: 3em;
     padding-left: 5px;
 }
