@@ -16,21 +16,39 @@
             margin-bottom: 2em;
         }
         .photo-grid img { width: 100%; object-fit: cover; }
-        .photo-grid .landscape { grid-column: span 3; }
+        .photo-grid > div:first-child {
+            display: flex;
+            align-items: flex-start;
+            grid-column: span 1;
+        }
+        .photo-grid > div:first-child img {
+            width: 25%;
+        }
+        .photo-grid .landscape { grid-column: span 2; }
         .photo-grid .portrait { grid-column: span 1; }
+        @media (max-width: 768px) {
+            .photo-grid {
+                grid-template-columns: repeat(1, 1fr);
+            }
+            .photo-grid .landscape { grid-column: span 1; }
+        }
     </style>
 </head>
 <body>
     <div class="project-container">
         <h1 class="project-title">Eavesdrop</h1>
         <div class="project-description">
-            <p style="text-transform: uppercase; font-style: italic;">2026</p>
-            <p>Eavesdrop</p>
+            <p style="text-transform: uppercase; font-style: italic;">2026, Performance at the Cape Town Investec Art fair. LUX + KAHLIL</p>
+            <p>The theme for the 2026 Investec Cape Town Art Fair was <span>"listen"</span>. We took this theme quite seriously in our conception of <i>EAVESDROP</i>, a performance piece running at the venue for the duration of the fair.</p>
+            <p>To eavesdrop is to listen in without permission, to overhear, or to snoop.</p>
+            <p> <strong>Our Routine</strong><br> From the 20th - 22nd of February we did nearly 10 hours of listening. We did it in three shifts per day. 1 hour walking around, listening and writing what we heard into a notebook. 1 hour of transcribing and putting what we heard onto Instagram.</p>
+            <p>We wore formal suits with a large QR code sewn to the blazers back with a prompt that said "Have we been listening? Read what you've been saying." The QR code linked to Everard Read's instagram account.</p>
+            <p>The performance was routine-based and ultimately an experiment in listening. The fair is big and bustling with sound and thousands of utterances, interactions and exchanges. To really listen was challenging.</p>
         </div>
 
         <div class="photo-grid">
             <div class="portrait"><img src="Images/EAVESDROP/E1.jpg" alt=""></div>
-            <div class="portrait"><img src="Images/EAVESDROP/E2.jpg" alt=""></div>
+            <!-- <div class="portrait"><img src="Images/EAVESDROP/E2.jpg" alt=""></div> -->
             <div class="portrait"><img src="Images/EAVESDROP/E3.jpg" alt=""></div>
             <div class="portrait"><img src="Images/EAVESDROP/E4.jpg" alt=""></div>
             <div class="portrait"><img src="Images/EAVESDROP/E5.jpg" alt=""></div>
