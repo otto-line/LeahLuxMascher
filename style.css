@@ -283,15 +283,11 @@ cv-container {
 
 
 /* tablet */
-@media (max-width: 768px) {
-
-    body {
-        overflow-x: hidden;
-    }
-
+/* Tablet and larger phones */
+@media (max-width: 1024px) {
     .container {
         display: grid;
-        grid-template-columns: 3fr 2fr;
+        grid-template-columns: 1fr;
     }
 
     .menu-container {
@@ -306,56 +302,49 @@ cv-container {
         padding-top: 0px;
     }
 
+    .title {
+        font-size: clamp(5vw, 10vw, 120px);
+        line-height: 0.6;
+        text-align: center;
+    }
+
+    .title-background {
+        color: rgb(0, 60, 255);
+        background: radial-gradient(circle, rgba(255, 255, 255, 1), rgb(104, 167, 255) 76.47%);
+        border-radius: 50%;
+        padding: 30px;
+        display: grid;
+        align-items: center;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 1;
+        filter: blur(30px);
+        place-items: center;
+    }
+
+    .menu-heading {
+        text-align: left;
+        color: white;
+        border-bottom: none;
+        margin: auto 0 auto 0;
+        width: 100%;
+        font-size: clamp(1rem, 3vw, 2em);
+        font-weight: 100;
+    }
+
+    .menu-items {
+        font-size: clamp(1rem, 3vw, 2em);
+        overflow-wrap: break-word;
+    }
+
+    body {
+        overflow-x: hidden;
+    }
+
     iframe {
         height: 100vh;
     }
-
-    .title {
-font-size: clamp(5vw, 10vw, 120px);
-line-height: 0.6;
-text-align: center;
-}
-
-.menu-container {
-background-color: rgb(220, 2, 2);
-padding: 5px;
-border-right: 1px solid #000;
-height: 100vh;
-overflow-y: auto;
-text-align: right;
-position: relative;
-min-width: 0;
-}
-.title-background {
-color: rgb(0, 60, 255);
-background: radial-gradient(circle, rgba(255, 255, 255, 1), rgb(104, 167, 255) 76.47%);
-border-radius: 50%;
-padding: 30px;
-display: grid;
-align-items: center;
-position: absolute;
-left: 50%;
-transform: translateX(-50%);
-z-index: 1;
-filter: blur(30px);
-place-items: center;
-}
-
-.menu-heading {
-text-align: left;
-color: white;
-border-bottom: none;
-margin: auto 0 auto 0;
-width: 100%;
-font-size: clamp(1rem, 3vw, 2em);
-font-weight: 100;
-}
-
-.menu-items {
-    font-size: clamp(1rem, 3vw, 2em);
-    overflow-wrap: break-word;
-}
-
 }
 
 .menu-item-thumb {
@@ -366,61 +355,68 @@ font-weight: 100;
     display: none;
 }
 
-/* phone */
-@media (max-width: 480px) {
+/* Phone - small screens */
+@media (max-width: 600px) {
+    #menu-toggle {
+        display: block;
+        position: fixed;
+        top: 10px;
+        right: 10px;
+        z-index: 500;
+        background: rgb(220, 2, 2) !important;
+        color: white !important;
+        border: none;
+        font-size: 1.4em;
+        padding: 5px 10px;
+        cursor: pointer;
+        line-height: 1;
+        -webkit-appearance: none;
+        appearance: none;
+    }
 
-#menu-toggle {
-    display: block;
-    position: fixed;
-    top: 10px;
-    right: 10px;
-    z-index: 500;
-    background: rgb(220, 2, 2) !important;
-    color: white !important;
-    border: none;
-    font-size: 1.4em;
-    padding: 5px 10px;
-    cursor: pointer;
-    line-height: 1;
-    -webkit-appearance: none;
-    appearance: none;
-}
+    .menu-container {
+        height: auto;
+    }
 
-.menu-container.menu-hidden {
-    display: none;
-}
+    .menu-container.menu-hidden {
+        display: none;
+    }
 
-.container.menu-closed {
-    grid-template-columns: 1fr;
-}
+    .container.menu-closed {
+        grid-template-columns: 1fr;
+    }
 
-.menu-heading {
-font-size: clamp(1rem, 3vw, 2em);
-font-weight: 100;
-}
+    .menu-heading {
+        font-size: clamp(1rem, 3vw, 2em);
+        font-weight: 100;
+    }
 
-.menu-items {
-    font-size: clamp(1rem, 3vw, 2em);
-    overflow-wrap: break-word;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-}
+    .menu-items {
+        font-size: clamp(1rem, 3vw, 2em);
+        overflow-wrap: break-word;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    }
 
-.menu-item-thumb {
-    display: inline-block;
-    width: 28px;
-    height: 28px;
-    object-fit: cover;
-    flex-shrink: 0;
-}
+    .menu-item-thumb {
+        display: inline-block;
+        width: 28px;
+        height: 28px;
+        object-fit: cover;
+        flex-shrink: 0;
+    }
 
-.contact-box {
-    display: none;
-}
+    .contact-box {
+        display: none;
+    }
 
-#hover-preview {
-    display: none !important;
-}
+    #hover-preview {
+        display: none !important;
+    }
 
+    .render {
+        width: 100%;
+        padding: 10px;
+    }
 }
