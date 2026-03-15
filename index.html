@@ -87,15 +87,13 @@
     const gridContainer = document.querySelector('.container');
 
     function hideMenuOnMobile() {
-        if (window.innerWidth <= 480) {
+        if (window.innerWidth <= 600) {
             menuContainer.classList.add('menu-hidden');
-            gridContainer.classList.add('menu-closed');
         }
     }
 
     menuToggle.addEventListener('click', () => {
         menuContainer.classList.toggle('menu-hidden');
-        gridContainer.classList.toggle('menu-closed');
     });
 
     // Hide menu when static heading links (Bio, CV) are clicked
