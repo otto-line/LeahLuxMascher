@@ -1,11 +1,23 @@
 {
-  "name": "leah-artwork-website",
+  "name": "leah-lux-mascher-website",
   "version": "1.0.0",
-  "description": "Artist website with automated artwork HTML generation",
+  "description": "Leah Lux Mascher portfolio website with Sanity CMS",
+  "type": "module",
+  "main": "scripts/generate.js",
   "scripts": {
-    "watch": "node watch-and-generate.js",
-    "generate": "node generate-artwork-html.js"
+    "dev": "sanity dev",
+    "start": "sanity start",
+    "build": "sanity build && node scripts/generate.js",
+    "generate": "node scripts/generate.js",
+    "sync": "node scripts/sync.js"
   },
   "author": "Leah Lux Mascher",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "@sanity/cli": "^3.37.0",
+    "@sanity/client": "^6.20.0",
+    "sanity": "^3.37.0",
+    "@sanity/vision": "^3.37.0",
+    "groq": "^3.37.0"
+  }
 }

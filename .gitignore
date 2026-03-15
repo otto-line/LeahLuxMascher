@@ -2,3 +2,10 @@ coordinate-picker.html
 pdf checker/
 .DS_Store
 node_modules/
+.env
+.env.local
+dist
+build
+.next
+*.log
+.sanity
