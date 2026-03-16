@@ -390,9 +390,9 @@ cv-container {
         height: 100%;
     }
 
-    /* Content on left side - 75% width normally, 100% when menu is hidden */
+    /* Content on left side - 60% width normally, 100% when menu is hidden */
     #content {
-        flex: 0 0 75%;
+        flex: 0 0 60%;
         min-height: 0;
         transition: flex 0.3s ease;
     }
@@ -401,17 +401,20 @@ cv-container {
         flex: 1;
     }
 
-    /* Menu on right side - 25% width, collapses to 0 when menu-hidden class applied */
+    /* Menu on right side - 40% width, completely hidden when menu-hidden class applied */
     .menu-container {
-        flex: 0 0 25%;
+        flex: 0 0 40%;
         height: 100vh;
         overflow-y: auto;
+        overflow-x: hidden;
         transition: flex 0.3s ease;
     }
 
     .menu-container.menu-hidden {
         flex: 0 0 0;
         overflow: hidden;
+        visibility: hidden;
+        width: 0;
     }
 
     iframe {
