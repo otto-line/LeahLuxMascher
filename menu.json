@@ -4,7 +4,7 @@
       "title": "Studio",
       "href": "studio.html",
       "year": null,
-      "hoverImage": null,
+      "hoverImage": "Images/STUDIO/ABSTRACT-FIRE.jpg",
       "spacerAfter": true
     },
     {
@@ -17,19 +17,19 @@
       "title": "Eavesdrop",
       "href": "eavesdrop.html",
       "year": "'26",
-      "hoverImage": "Images/hover/Eavesdrop.png"
+      "hoverImage": "Images/EAVESDROP/E1.jpg"
     },
     {
       "title": "Lux Room Shrine",
       "href": "shrine-hotspot.html",
       "year": "'25",
-      "hoverImage": "Images/hover/LUX BEDROOM SHRINE A3 PRINT.png"
+      "hoverImage": "Images/hover/LUX-BEDROOM-SHRINE-A3-PRINT.png"
     },
     {
       "title": "Forever Love",
       "href": "Forever-Love.html",
       "year": "'24",
-      "hoverImage": "Images/hover/Forever-love.png"
+      "hoverImage": "Images/hover/Forever-love.jpg"
     },
     {
       "title": "Necklace",
@@ -41,13 +41,13 @@
       "title": "Pipe Dreams",
       "href": "Pipe-Dreams.html",
       "year": "'24",
-      "hoverImage": null
+      "hoverImage": "Images/PIPE-DREAMS/MARY-1.jpg"
     },
     {
       "title": "Fiery Sadness",
       "href": "fiery-sadness.html",
       "year": null,
-      "hoverImage": null
+      "hoverImage": "Images/FIERY-SADNESS/FS1.jpg"
     }
   ]
 }
