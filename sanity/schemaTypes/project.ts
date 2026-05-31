@@ -1,9 +1,11 @@
 import {defineType, defineField} from 'sanity'
+import {ImagesIcon} from '@sanity/icons'
 
 export default defineType({
   name: 'project',
   title: 'Project',
   type: 'document',
+  icon: ImagesIcon,
   fields: [
     defineField({
       name: 'title',
@@ -85,9 +87,12 @@ export default defineType({
     }),
     defineField({
       name: 'hoverImage',
-      title: 'Hover Preview Image',
-      type: 'string',
-      description: 'Local path for menu hover preview, e.g. Images/hover/Project.jpg',
+      title: 'Menu Hover Image',
+      type: 'image',
+      description: 'Image shown when hovering over this project in the menu',
+      options: {
+        hotspot: true,
+      },
     }),
     defineField({
       name: 'gridColumns',

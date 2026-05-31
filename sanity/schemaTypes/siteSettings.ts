@@ -1,9 +1,11 @@
 import {defineType, defineField} from 'sanity'
+import {ControlsIcon} from '@sanity/icons'
 
 export default defineType({
   name: 'siteSettings',
   title: 'Site Settings',
   type: 'document',
+  icon: ControlsIcon,
   fields: [
     defineField({
       name: 'title',

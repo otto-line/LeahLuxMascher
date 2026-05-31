@@ -1,9 +1,11 @@
 import {defineType, defineField} from 'sanity'
+import {DocumentTextIcon} from '@sanity/icons'
 
 export default defineType({
   name: 'cvItem',
   title: 'CV Item',
   type: 'document',
+  icon: DocumentTextIcon,
   fields: [
     defineField({
       name: 'title',
