@@ -114,16 +114,23 @@
         });
     }
 
-    fetch('menu.json')
+    const menuQuery = encodeURIComponent(
+        `*[_type == "project" && published == true] | order(year desc) {
+            title,
+            "slug": slug.current,
+            year,
+            "hoverImage": hoverImage.asset->url
+        }`
+    );
+    fetch(`https://ssrah1z8.apicdn.sanity.io/v2024-01-01/data/query/production?query=${menuQuery}`)
         .then(r => r.json())
         .then(data => {
             const container = document.getElementById('project-menu-items');
-            data.projects.forEach(p => {
+            data.result.forEach(p => {
                 const div = document.createElement('div');
                 div.className = 'menu-items';
-                if (p.spacerAfter) div.style.marginBottom = '1em';
                 const a = document.createElement('a');
-                a.href = p.href;
+                a.href = p.slug + '.html';
                 a.target = 'content';
                 if (p.hoverImage) a.dataset.hoverImage = p.hoverImage;
                 a.textContent = p.year ? `${p.title} ${p.year}` : p.title;
